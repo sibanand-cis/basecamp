@@ -1,0 +1,1 @@
+Basecamp = Npm.require("basecamp");

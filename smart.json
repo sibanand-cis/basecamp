@@ -1,0 +1,8 @@
+{
+  "name": "basecamp",
+  "description": "Basecamp connect flow and basecamp-api wrapper",
+  "homepage": "",
+  "author": "Sivanand Kheti <siva20078@gmail.com>",
+  "version": "0.0.1",
+  "git": "https://github.com/sibanand-cis/basecamp.git"
+}
