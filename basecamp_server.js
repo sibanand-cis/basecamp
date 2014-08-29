@@ -9,12 +9,10 @@ Oauth.registerService('basecamp', 2, null, function(query) {
   var accessToken = response.accessToken;
   var identity = getIdentity(accessToken);
 
-
   var serviceData = {
     accessToken: accessToken,
     expiresAt: (+new Date) + (1000 * response.expiresIn),
-    id: identity.id,
-    email: identity.email_address,
+    id: identity.accounts[0].id
   };
 
 
@@ -74,7 +72,7 @@ var getIdentity = function(accessToken){
   try {
     return HTTP.get(
       "https://launchpad.37signals.com/authorization.json",
-      {params: {access_token: accessToken}}).data.identity;
+      {params: {access_token: accessToken}}).data;
   } catch (err) {
     throw _.extend(new Error("Failed to fetch identity from Basecamp. " + err.message),
                    {response: err.response});
